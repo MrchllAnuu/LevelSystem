@@ -39,7 +39,7 @@ use pocketmine\plugin\Plugin;
 use pocketmine\plugin\PluginBase;
 
 use pocketmine\player\Player;
-use pocketmine\block\BlockLegacyIds;
+use pocketmine\block\BlockTypeIds;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat as TF;
 
