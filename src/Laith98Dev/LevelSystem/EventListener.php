@@ -45,6 +45,8 @@ use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\event\block\BlockBreakInfo;
 use pocketmine\event\entity\{EntityDamageEvent, EntityDamageByEntityEvent};
+use pocketmine\player\chat\ChatFormatter;
+use pocketmine\player\chat\LegacyRawChatFormatter;
 
 use _64FF00\PurePerms\EventManager\PPRankChangedEvent;
 
@@ -236,7 +238,7 @@ class EventListener implements Listener
 						$WorldName = $this->getPlugin()->pureChat->getConfig()->get("enable-multiworld-chat") ? $player->getWorld()->getDisplayName() : null;
 						$chatFormat = $this->getPlugin()->pureChat->getChatFormat($player, $message, $WorldName);
 						$chatFormat = str_replace("{lvl}", $lvl, $chatFormat);
-						$event->setFormat($chatFormat); 
+						$event->setFormatter(new LegacyRawChatFormatter($chatFormat)); 
 					} 
 					/* else {
 						if($cfg->get("chatFormat") && $cfg->get("chatFormat") !== ""){
