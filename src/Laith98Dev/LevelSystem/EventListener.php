@@ -50,7 +50,7 @@ use pocketmine\event\entity\{EntityDamageEvent, EntityDamageByEntityEvent};
 use pocketmine\player\chat\ChatFormatter;
 use pocketmine\player\chat\LegacyRawChatFormatter;
 
-use _64FF00\PurePerms\event\PPGroupChangedEvent;
+use _64FF00\PurePerms\EventManager\PPRankChangedEvent;
 
 class EventListener implements Listener 
 {
@@ -72,7 +72,7 @@ class EventListener implements Listener
 	 * @param PPGroupChangedEvent $event
 	 * @priority HIGHEST
 	 */
-	public function onRankChanged(PPGroupChangedEvent $event)
+	public function onRankChanged(PPRankChangedEvent $event)
     {
         /** @var IPlayer $player */
         $player = $event->getPlayer();
