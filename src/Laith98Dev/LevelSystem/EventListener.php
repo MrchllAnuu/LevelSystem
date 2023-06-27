@@ -35,6 +35,8 @@ namespace Laith98Dev\LevelSystem;
  * 	
  */
 
+use pocketmine\event\block\BlockBreakEvent;
+use pocketmine\event\block\BlockPlaceEvent;
 use pocketmine\player\IPlayer;
 use pocketmine\player\Player;
 use pocketmine\event\Listener;
@@ -67,7 +69,7 @@ class EventListener implements Listener
 	}
 
 	/**
-	 * @param PPRankChangedEvent $event
+	 * @param PPGroupChangedEvent $event
 	 * @priority HIGHEST
 	 */
 	public function onRankChanged(PPRankChangedEvent $event)
@@ -112,7 +114,7 @@ class EventListener implements Listener
 	public function onPlace(BlockPlaceEvent $event): void
 	{
 		$player = $event->getPlayer();
-		$block = $event->getBlock();
+		$block = $event->getBlockAgainst();
 		if($event->isCancelled())
 			return;
 		

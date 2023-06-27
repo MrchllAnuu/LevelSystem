@@ -66,7 +66,7 @@ class Main extends PluginBase
 		"add-xp-by-chat" => true,
 		"kill-with-death-screen" => true,
 		"edit-chat-format" => true,
-		"blocks-list" => [BlockLegacyIds::STONE, BlockLegacyIds::DIRT],// List of blocks that give XP
+		"blocks-list" => [BlockTypeIds::STONE, BlockTypeIds::DIRT],// List of blocks that give XP
 		"default-level-message" => "&eCongratulations, you have reached level {newLvl}",
 		"level.1.message" => "&eCongratulations {player}, you have reached level {newLvl}",
 		"level.2.message" => "&aCongratulations {player}, you have reached level {newLvl}",
